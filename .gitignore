@@ -5,7 +5,7 @@
 NOTES.md
 functions/node_modules
 
-/src/env.ts
+/src/env/index.ts
 
 # compiled output
 /dist
