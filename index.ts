@@ -27,7 +27,7 @@ const APP_NAME = 'base';
 const { AppServerModuleNgFactory } = require(`./${APP_NAME}-server/main`);
 
 // index.html template
-const template = readFileSync(join(DIST_FOLDER, APP_NAME, 'index-1.html')).toString();
+const template = readFileSync(join(DIST_FOLDER, 'browser', 'index-1.html')).toString();
 
 app.engine('html', (_, options, callback) => {
   renderModuleFactory(AppServerModuleNgFactory, {
@@ -42,11 +42,11 @@ app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, APP_NAME));
 
 // Serve static files 
-app.get('*.*', express.static(join(DIST_FOLDER, APP_NAME)));
+app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-    res.render(join(DIST_FOLDER, APP_NAME, 'index-1.html'), { req });
+    res.render(join(DIST_FOLDER, 'browser', 'index-1.html'), { req });
 });
 
 // Start up the Node server
