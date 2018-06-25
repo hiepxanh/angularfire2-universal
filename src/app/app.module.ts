@@ -31,7 +31,7 @@ import { SeoService } from './seo.service';
     AnimalListComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'my-app'}),
+    BrowserModule.withServerTransition({appId: 'base'}),
     BrowserTransferStateModule,
     AppRoutingModule,
     FormsModule,
